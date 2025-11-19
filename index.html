@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConecMayor+</title>
+    <link rel="stylesheet" href="./estilo.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav">
+            <a href="index.html" class="logo">ConecMayor+</a>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Llamadas y videollamadas de manera sencilla</h1>
+            <small>ConecMayor+ a tu disposicion</small>
+        </section>
+
+        <section class="info">
+            <form role="info" class="info-card">
+                <h1>¿Que es ConecMayor+?</h1>
+                <p>ConecMayor+ esta diseñado para el desarrollo sovial y la inclusion de la comunidad.</p>
+                <br>
+                <h3>pero, ¿A que nos estamos refiriendo?</h3>
+                <p>En este simple problema, los adultos mayores enfrentan aislamiento y dificultades para acceder a servicios esenciales.
+                Al mismo tiempo, pequeños emprendedores se ven limitados en el crecimiento de sus negocios por no manejar las herramientas 
+                digitales.</p>
+                <br>
+                <h3>El beneficio:</h3>
+                <p>Poder ayudar a las personas que lo necesiten, poder ocupar las redes sociales de una manera sencilla</p>
+                <br>
+                <h1>¿Necesitas de nuestra ayuda? Contactanos:</h1>
+                <button type="button" class="btn-primary" id="btn-contactar">Contactar</button>
+            </form>
+        </section>
+
+        <div class="modal-overlay" id="modal-contacto">
+            <div class="modal">
+                <button class="modal-close" id="modal-close">&times;</button>
+
+                <h2>Formulario de contacto</h2>
+
+                <div class="contact-form">
+                    <label>
+                        Nombre completo
+                        <input type="text" name="nombre" placeholder="Ej: Juan Pérez" required>
+                    </label>
+
+                    <label>
+                        Número de contacto
+                        <input type="tel" name="telefono" placeholder="Ej: +56 9 1234 5678" required>
+                    </label>
+
+                    <label>
+                        Correo electrónico
+                        <input type="email" name="correo" placeholder="Ej: correo@ejemplo.com" required>
+                    </label>
+
+                    <label>
+                        Información adicional
+                        <textarea name="info" rows="4" placeholder="Cuéntanos en qué necesitas ayuda"></textarea>
+                    </label>
+
+                    <button type="submit" class="btn-enviar">Enviar</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="opiniones">
+            <h1>Opiniones de nuestros clientes</h1>
+            <div class="opiniones-grid">
+                <article class="opinion-card">
+                    <div class="opinion-img-wrapper">
+                        <img src="img/abuelo.webp" alt="Abuelo">
+                        <div class="opinion-rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="opinion-card">
+                    <div class="opinion-img-wrapper">
+                        <img src="img/emprendedor.webp" alt="Emprendedor">
+                        <div class="opinion-rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="opinion-card">
+                    <div class="opinion-img-wrapper">
+                        <img src="img/images.jpeg" alt="Cliente satisfecho">
+                        <div class="opinion-rating">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <footer>
+        <small>&copy; 2025 r.castillo10@ufromail.cl -Todos los derechos reservados.</small>
+    </footer>
+</body>
+<script>
+    const btnContactar = document.getElementById('btn-contactar');
+    const modalContacto = document.getElementById('modal-contacto');
+    const btnCerrarModal = document.getElementById('modal-close');
+
+    // Abrir modal
+    btnContactar.addEventListener('click', () => {
+        modalContacto.classList.add('is-open');
+    });
+
+    // Cerrar modal al hacer clic en la X
+    btnCerrarModal.addEventListener('click', () => {
+        modalContacto.classList.remove('is-open');
+    });
+
+    // Cerrar modal al hacer clic fuera de la tarjeta
+    modalContacto.addEventListener('click', (e) => {
+        if (e.target === modalContacto) {
+        modalContacto.classList.remove('is-open');
+        }
+    });
+</script>
+</html>
